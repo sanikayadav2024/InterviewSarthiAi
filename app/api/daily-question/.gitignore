@@ -1,0 +1,52 @@
+# --- Environment files ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- Node.js dependencies ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Next.js build output ---
+.next/
+out/
+dist/
+
+# --- Build / cache ---
+.cache/
+coverage/
+*.log
+
+# --- VS Code settings ---
+.vscode/
+*.code-workspace
+
+# --- System files ---
+.DS_Store
+Thumbs.db
+
+# --- Temporary files ---
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# --- TypeScript ---
+*.tsbuildinfo
+
+# --- Optional lock files (uncomment if needed) ---
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# --- Misc ---
+.idea/
+*.iml
+
+# --- Local testing / uploads ---
+uploads/
