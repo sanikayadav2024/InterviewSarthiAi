@@ -19,7 +19,7 @@ To get started with the AI-Powered Mock Interview Platform, follow these steps:
 
 1. Clone this repository:
    ```bash
-   https://github.com/Shreyash-03-codes/IntereviewSarthiAi.git
+   https://github.com/sanikayadav2024/InterviewSarthiAi
 
 2. Navigate to the project directory:
    ```bash
