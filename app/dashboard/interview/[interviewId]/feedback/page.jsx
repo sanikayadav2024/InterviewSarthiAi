@@ -1,35 +1,38 @@
 "use client";
+
+import React, { useEffect, useState, useMemo } from "react";
 import { db } from "@/utils/db";
 import { UserAnswer } from "@/utils/schema";
 import { eq, asc } from "drizzle-orm";
-import React, { useEffect, useState, useMemo } from "react";
+import { useRouter, useParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
+
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
-import { useRouter, useParams } from "next/navigation";
 
 const Feedback = () => {
   const router = useRouter();
-  const params = useParams(); // ✅ works reliably in app router
+  const params = useParams();
   const [feedbackList, setFeedbackList] = useState([]);
 
   useEffect(() => {
     if (params?.interviewId) {
-      GetFeedback(params.interviewId);
+      getFeedback(params.interviewId);
     }
   }, [params]);
 
-  const GetFeedback = async (interviewId) => {
+  const getFeedback = async (interviewId) => {
     try {
+      // 🔹 Fetch all answers for this interview and order by ID
       const result = await db
         .select()
         .from(UserAnswer)
         .where(eq(UserAnswer.mockIdRef, interviewId))
-        .orderBy(asc(UserAnswer.id));
+        .orderBy(asc(UserAnswer.id)); // using ID as the order
 
       console.log("Feedback result:", result);
       setFeedbackList(result);
@@ -38,6 +41,7 @@ const Feedback = () => {
     }
   };
 
+  // Calculate overall rating
   const overallRating = useMemo(() => {
     if (feedbackList.length > 0) {
       const totalRating = feedbackList.reduce(
@@ -74,8 +78,9 @@ const Feedback = () => {
             Find below interview question with correct answer, your answer and
             feedback for improvement
           </h2>
-          {feedbackList.map((item, index) => (
-            <Collapsible key={index} className="mt-7">
+
+          {feedbackList.map((item) => (
+            <Collapsible key={item.id} className="mt-7"> {/* 🔹 Use unique DB id */}
               <CollapsibleTrigger className="p-2 bg-secondary rounded-lg my-2 text-left flex justify-between gap-7 w-full">
                 {item.question} <ChevronDown className="h-5 w-5" />
               </CollapsibleTrigger>
