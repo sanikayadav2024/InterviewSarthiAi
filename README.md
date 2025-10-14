@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # AI-Powered Mock Interview Platform
 
 ## Description
@@ -47,3 +48,7 @@ To use the IntereviewSarthiAi Platform, follow these guidelines:
 =======
 # Impetus
 >>>>>>> f87f2a5db77c4dbea596684ed6cf4501b955ae71
+=======
+# InterviewSarthiAi
+Interview Sarthi is an AI-powered mock interview platform designed to help job seekers and professionals prepare effectively for interviews. Leveraging advanced artificial intelligence, the platform simulates real-world interview scenarios, provides instant feedback on responses, and evaluates communication skills, confidence, and domain knowledge.
+>>>>>>> da9db89aa3e6fe60e2d5037630c0d98fa1f62e1b
