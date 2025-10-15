@@ -113,16 +113,16 @@ const Header = ({ logo }) => {
               path == "/dashboard/question" && "text-black font-bold"
             }`}
           >
-            Questions
+            Prepare
           </li>
           </Link>
-          <Link href="/dashboard/upgrade">
+          <Link href="/dashboard/dailychallenges">
             <li
               className={`hover:text-black hover:font-bold transition-all cursor-pointer ${
                 path == "/dashboard/upgrade" && "text-black font-bold"
               }`}
             >
-              Upgrade
+              Daily Challenge
             </li>
           </Link>
           <Link href="/dashboard/howit">
