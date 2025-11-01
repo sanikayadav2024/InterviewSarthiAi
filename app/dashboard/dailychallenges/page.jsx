@@ -64,7 +64,7 @@ export default function DailyQuestionCard() {
         🔥 Daily Challenge
       </h2>
 
-      <h2>Q</h2><p className="mt-4 text-gray-800 text-lg leading-relaxed">{question.question}</p>
+      <p className="mt-4 text-gray-800 text-lg leading-relaxed">{question.question}</p>
 
       {/* Show/Hide AI Answer */}
       <div className="mt-6">
