@@ -22,7 +22,7 @@ export async function GET() {
 
     // 2️⃣ Generate new question using Gemini AI
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-    const prompt = `Generate a coding interview style easy daily challenge with:
+    const prompt = `Generate a tricky but easy question as a cse student to solve it and give one line answer, daily challenge with:
 - question
 - answer
 - category (DSA/Algo/System Design/etc.)
